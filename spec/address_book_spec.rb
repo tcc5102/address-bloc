@@ -10,6 +10,19 @@ RSpec.describe AddressBook do
     expect(entry.email).to eq expected_email
   end
 
+  describe "#wipeout" do
+    it "should erase all entries" do
+      book.add_entry('Michael Johnson', '777.019.5555', 'michaeljohnson@michaeljohnson.com')
+      book.add_entry('Michael Johnson', '777.019.5555', 'michaeljohnson@michaeljohnson.com')
+      book.add_entry('Michael Johnson', '777.019.5555', 'michaeljohnson@michaeljohnson.com')
+      book.add_entry('Michael Johnson', '777.019.5555', 'michaeljohnson@michaeljohnson.com')
+      book.add_entry('Michael Johnson', '777.019.5555', 'michaeljohnson@michaeljohnson.com')
+
+      book.wipeout
+      expect(book.entries.size).to eq(0)
+    end
+  end
+
   describe "attributes" do
     it "responds to entries" do
       expect(book).to respond_to(:entries)

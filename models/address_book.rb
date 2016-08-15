@@ -8,6 +8,10 @@ class AddressBook
     @entries = []
   end
 
+  def wipeout
+    @entries = []
+  end
+
   def delete_entry(email)
     deleted_entry = nil
 

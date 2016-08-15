@@ -15,7 +15,8 @@ class MenuController
     puts "3 - Search for an entry"
     puts "4 - Import entries from a CSV"
     puts "5 - View Entry By Number"
-    puts "6 - Exit"
+    puts "6 - Wipe all entries"
+    puts "7 - Exit"
     print "Enter your selection: "
 
 
@@ -39,6 +40,11 @@ class MenuController
         read_csv
         main_menu
       when 6
+        system "clear"
+        @address_book.wipeout
+        puts "What have you done!"
+        main_menu
+      when 7
         puts "Good-bye!"
         exit(0)
       when 5
